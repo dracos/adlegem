@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteBase /
+
+# serve static files directly
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule (.+) $1 [L]
+
+RewriteRule ^(.*)$          index.php?url=$1 [QSA,L,B]
